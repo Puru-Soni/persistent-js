@@ -2,6 +2,8 @@
 
 JavaScript fullstack course by persistent systems
 
+# DAY 1
+
 Prerequites:
 Vscode, Nodejs - version v18.16+
 Extension for vscode
@@ -27,3 +29,19 @@ What is Javascript ?
     internal, external, inline
     html parse -> top to bottom
     best to write script at end of body.
+
+DEMO 1:
+
+    how to write js code
+
+    datatype (Number, object, boolean, string etc)
+    typeof
+    variables
+    var, let, const
+
+    scoping - function / block scope
+
+    operators
+    control statements
+
+    Aarrys and Objects(kye-value)
