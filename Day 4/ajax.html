@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body onload="display()">
+		<script>
+			const xhr = new XMLHttpRequest();
+			function display() {
+				console.log("Doc is loaded");
+			}
+
+			xhr.onprogress = function () {
+				console.log(
+					this.readyState,
+					this.statusText,
+					"3 state between open and fetching",
+				);
+			};
+			xhr.onload = function () {
+				console.log(
+					this.readyState,
+					this.statusText,
+					"4 state after response is downloaded and before sending to client",
+				);
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var emp = JSON.parse(xhr.responseText);
+					for (let e of emp) {
+						console.log(e);
+					}
+				}
+			};
+
+			// GET request or POST request with async to true
+			xhr.open("GET", "./data.json", true);
+			xhr.send();
+
+			// for POST also setRequestHeader(key:value)
+			// and send params to xhr.send(params)
+		</script>
+	</body>
+</html>
