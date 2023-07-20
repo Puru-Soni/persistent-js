@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+	</head>
+	<body>
+        <h3>Phone Number & Card Validation</h3>
+        Enter your Phone Number:<input type="text" id="phoneNumber" onkeydown="checkPhoneNumber()" onkeyup="checkPhoneNumber()">
+        <div id="phoneNumber_Warning"></div></br>
+        
+        Enter your Card Number:<input type="text" id="cardNumber" onkeyup="checkCardNumber()" onkeydown="checkCardNumber()">
+        <div id="cardNumber_Warning"></div></br>
+        <button type="button" id="validate" onclick="validate()">Validate</button>
+        <div id="success"></div>
+
+       <script type="text/javascript">
+
+            function validate()
+            {
+                let success = document.getElementById("success");
+                success.innerText = checkCardNumber() && checkPhoneNumber() ? "Details stored in database" : "";
+            }
+
+            function checkPhoneNumber()
+            {
+                const phoneNum = document.getElementById("phoneNumber").value
+                let phoneValidation = document.getElementById("phoneNumber_Warning");
+
+                phoneValidation.innerText = 
+                phoneNum === "" ? "" 
+                : isNaN(phoneNum)
+                ? "Phone number must contains only digits"
+                : (phoneNum.length != 10 ) 
+                ? "Phone Number must be 10 digits" 
+                : ""
+
+                return (phoneValidation.innerText === "") ? true : false;
+            }
+            function checkCardNumber()
+            {
+                const cardNum = document.getElementById("cardNumber").value
+                let cardValidation = document.getElementById("cardNumber_Warning"); 
+
+                cardValidation.innerText = 
+                cardNum === "" ? "" 
+                : isNaN(cardNum)
+                ? "Card number must contains only digits"
+                : (cardNum.length != 16 ) 
+                ? "Card Number must be 16 digits" 
+                : "";
+                
+                return (cardValidation.innerText === "") ? true : false;
+            }
+    	 </script>
+	</body>
+</html>
+
