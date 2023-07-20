@@ -2,7 +2,7 @@
 
 JavaScript fullstack course by persistent systems
 
-# Prerequites:
+# Prerequisites:
 
     Vscode
     Nodejs - version v18.16+
