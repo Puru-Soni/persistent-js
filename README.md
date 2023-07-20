@@ -84,3 +84,21 @@ JavaScript fullstack course by persistent systems
         sets
 
     ->  callback function
+
+# DAY 4
+
+    ->  promises  (handle async data)
+    ->  eventHandler
+    ->  event propogation (determines which order object recieve events)
+            event bubbling (bottom to up)/(inner to outer) - false
+            event capturing (top to bottom)/(outer to inner) - true
+            addEventListner("event", callback, {boolean} event propogation)
+
+    -> DOM API's
+    -> AJAX
+            0: request not initialized
+            1: server connection established
+            2: request received
+            3: processing request
+            4: request finished and response is ready
+    -> Fetch
