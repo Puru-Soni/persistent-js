@@ -4,9 +4,9 @@ JavaScript fullstack course by persistent systems
 
 # DAY 1
 
-Prerequites:
-Vscode, Nodejs - version v18.16+
-Extension for vscode
+    Prerequites:
+    Vscode, Nodejs - version v18.16+
+    Extension for vscode
 
 What is Javascript ?
 
@@ -33,53 +33,53 @@ What is Javascript ?
 
 DEMO 1:
 
-    how to write js code ?
+    ->  how to write js code ?
 
-    datatype (Number, object, boolean, string etc)
-    typeof
-    variables
-    var, let, const
+    ->  datatype (Number, object, boolean, string etc)
+        typeof
+        variables
+        var, let, const
 
-    scoping - function / block scope
+    ->  scoping - function / block scope
 
-    operators
-    control statements
+    ->  operators
+        control statements
 
-    Aarrys and Objects(key-value pairs)
+    ->  Aarrys and Objects(key-value pairs)
 
 # DAY 2
 
-    string methods
-    contactination
+    ->  string methods
+        contactination
 
-    loops
+    ->  loops
 
-    functions
-    arrow functions
+    ->  functions
+        arrow functions
 
-    object constructor (objectConstructor.js)
+    ->  object constructor (objectConstructor.js)
 
-    delete keyword (deleteOperator.js)
+    ->  delete keyword (deleteOperator.js)
 
-    how to select DOM object
-    JSON ( JSON.parse, JSON.stringify )
+    ->  how to select DOM object
+        JSON ( JSON.parse, JSON.stringify )
 
-    Error (try, catch, finally blocks)
+    ->  Error (try, catch, finally blocks)
 
-    classes (ES6)
+    ->  classes (ES6)
 
 # DAY 3
 
-    object destucturing
-    inheritance and prototype chain
-    method overriding / overloading
+    ->  object destucturing
+        inheritance and prototype chain
+        method overriding / overloading
 
-    modules
-        es5( require )
-        es6( import/export )
-        module file extension  -> .mjs
+    ->  modules
+            es5( require )
+            es6( import/export )
+            module file extension  -> .mjs
 
-    maps
-    sets
+    ->  maps
+        sets
 
-    callback function
+    ->  callback function
