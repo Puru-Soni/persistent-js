@@ -1,6 +1,6 @@
 class Student {
-	fname = "john";
-	education = "BE";
+	fname;
+	education;
 
 	fullname() {
 		return `${this.fname} ${this.lname}`;
@@ -10,7 +10,12 @@ class Student {
 		this.fname = fname;
 		this.education = education;
 	}
+
+	getName() {
+		return this.fname;
+	}
 }
 
-console.log(new Student("john", "wick"));
+console.dir(Student);
+console.dir(new Student());
 console.log(new Student().fullname());
