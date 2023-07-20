@@ -2,13 +2,14 @@
 
 JavaScript fullstack course by persistent systems
 
-# DAY 1
+# Prerequites:
 
-    Prerequites:
-    Vscode, Nodejs - version v18.16+
-    Extension for vscode
+    Vscode
+    Nodejs - version v18.16+
+    npm - version 9.6+
+    Extensions for vscode
 
-What is Javascript ?
+# What is Javascript ?
 
     initial - client side scripting language
     serve side scripting language using node.js
@@ -31,7 +32,7 @@ What is Javascript ?
     html parses -> top to bottom
     so best to write script at end of body.
 
-DEMO 1:
+# DAY 1
 
     ->  how to write js code ?
 
