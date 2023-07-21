@@ -87,7 +87,7 @@
 						createtable(studentData);
 					}
 				};
-				
+
 				xhr.open("GET", "./Students.json");
 				xhr.send();
 			}
@@ -101,7 +101,7 @@
 					if (this.readyState == 4 && this.status == 200 && id != "") {
 						studentData[id - 1][fieldType] = fieldValue;
 						tbody.innerHTML = "";
-						createtable(data);
+						createtable(studentData);
 					}
 				};
 			}
