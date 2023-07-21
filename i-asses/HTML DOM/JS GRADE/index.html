@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Grade Sheet</h1>
+		<label for="marks">Marks</label>
+		<input type="text" id="mark" name="mark" /><br />
+		<button type="submit" name="submit" onclick="myFunction()">Submit</button>
+		<div id="result"></div>
+		<script>
+			function myFunction() {
+				const input = document.getElementById("mark").value;
+				const result = document.getElementById("result");
+				if (!isNaN(input)) {
+					const mark = Number(input);
+					const res =
+						mark > 99
+							? "A+"
+							: mark > 89
+							? "A"
+							: mark > 79
+							? "B"
+							: mark > 69
+							? "C"
+							: mark > 59
+							? "D"
+							: mark > 49
+							? "E"
+							: "RA";
+
+					result.style.color = res === "RA" ? "red" : "green";
+					result.textContent = `Grade obtained by the student is : ${res}`;
+				}
+			}
+		</script>
+	</body>
+</html>
