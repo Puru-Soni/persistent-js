@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			body {
+				text-align: center;
+				width: 100%;
+			}
+
+			.pd-2 {
+				padding: 2px;
+			}
+
+			.mg-2 {
+				margin: 2px;
+			}
+
+			.hide {
+				display: none;
+			}
+
+			.show {
+				display: block;
+			}
+
+			#table {
+				width: fit-content;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body onload="display()">
+		<section>
+			<h2>Student Details</h2>
+			<table border="1px" class="hide" id="table">
+				<thead id="table-head">
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>DOB</th>
+						<th>Mobile Number</th>
+						<th>Email</th>
+						<th>Address</th>
+						<th>DOJ</th>
+						<th>Department</th>
+						<th>Mark</th>
+					</tr>
+				</thead>
+				<tbody id="table-body"></tbody>
+			</table>
+
+			<section id="form">
+				Student Id : <input id="id" type="text" /><br />
+				Field Type :
+				<select id="fieldType">
+					<option value="name">Name</option>
+					<option value="DOB">DOB</option>
+					<option value="mobileNumber">Mobile Number</option>
+					<option value="email">Email</option>
+					<option value="address">Address</option>
+					<option value="DOJ">DOJ</option>
+					<option value="department">Department</option>
+					<option value="mark">Mark</option>
+				</select>
+				<br />
+				Field Value : <input id="fieldValue" type="text" e /><br />
+				<button class="mg-2" id="update" onclick="update()">UPDATE</button>
+			</section>
+		</section>
+		<script>
+			document.addEventListener("load", display);
+			let studentData;
+			const tbody = document.getElementById("table-body");
+			function display() {
+				const xhr = new XMLHttpRequest();
+
+				xhr.onload = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						table.classList.add("show");
+						table.classList.remove("hide");
+
+						studentData = JSON.parse(this.responseText);
+						createtable(studentData);
+					}
+				};
+
+				xhr.open("GET", "./Students.json");
+				xhr.send();
+			}
+
+			function update() {
+				const id = Number(document.getElementById("id").value);
+				const fieldType = document.getElementById("fieldType").value;
+				const fieldValue = document.getElementById("fieldValue").value;
+
+				xhr.onload = function () {
+					if (this.readyState == 4 && this.status == 200 && id != "") {
+						studentData[id - 1][fieldType] = fieldValue;
+						tbody.innerHTML = "";
+						createtable(studentData);
+					}
+				};
+			}
+
+			function createtable(data) {
+				tbody.innerHTML += `<tr></tr>`;
+				data.forEach((ob) => {
+					tbody.innerHTML += `
+                        <tr>
+                            <td>${ob.id}</td>
+                            <td>${ob.name}</td>
+                            <td>${ob.DOB}</td>
+                            <td>${ob.mobileNumber}</td>
+                            <td>${ob.email}</td>
+                            <td>${ob.address}</td>
+                            <td>${ob.DOJ}</td>
+                            <td>${ob.department}</td>
+                            <td>${ob.mark}</td>
+                        </tr>`;
+				});
+			}
+		</script>
+	</body>
+</html>

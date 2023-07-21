@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+	</head>
+	<body>
+        <h3>Phone Number & Card Validation</h3>
+        Enter your Phone Number:<input type="text" id="phoneNumber" onkeydown="checkPhoneNumber()" onkeyup="checkPhoneNumber()">
+        <div id="phoneNumber_Warning"></div></br>
+        
+        Enter your Card Number:<input type="text" id="cardNumber" onkeyup="checkCardNumber()" onkeydown="checkCardNumber()">
+        <div id="cardNumber_Warning"></div></br>
+        <button type="button" id="validate" onclick="validate()">Validate</button>
+        <div id="success"></div>
+
+       <script type="text/javascript">
+
+            function validate()
+            {
+                let success = document.getElementById("success");
+                success.innerText = checkCardNumber() && checkPhoneNumber() ? "Details stored in database" : "";
+            }
+
+            function checkPhoneNumber()
+            {
+                const phoneNum = document.getElementById("phoneNumber").value
+                let phoneValidation = document.getElementById("phoneNumber_Warning");
+
+                return checkNumber(phoneNum, phoneValidation, "phone", 10)
+            }
+
+            function checkCardNumber()
+            {
+                const cardNum = document.getElementById("cardNumber").value
+                let cardValidation = document.getElementById("cardNumber_Warning"); 
+
+                return checkNumber(cardNum, cardValidation, "card", 16)
+            }
+
+            function checkNumber(element, warning, type, count){
+                warning.innerText = 
+                element === "" ? "" 
+                : isNaN(element)
+                ? `${type} number must contains only digits`
+                : (object.length != count ) 
+                ? `${type} Number must be ${count} digits`
+                : ""
+
+                return (warning.innerText === "") ? true : false;
+            }
+    	 </script>
+	</body>
+</html>
+
