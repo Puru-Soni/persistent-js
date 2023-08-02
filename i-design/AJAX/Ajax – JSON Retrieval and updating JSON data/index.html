@@ -73,8 +73,10 @@
 		</section>
 		<script>
 			document.addEventListener("load", display);
-			let studentData;
+			let studentData; // global var for data store
+
 			const tbody = document.getElementById("table-body");
+
 			function display() {
 				const xhr = new XMLHttpRequest();
 
@@ -97,13 +99,10 @@
 				const fieldType = document.getElementById("fieldType").value;
 				const fieldValue = document.getElementById("fieldValue").value;
 
-				xhr.onload = function () {
-					if (this.readyState == 4 && this.status == 200 && id != "") {
-						studentData[id - 1][fieldType] = fieldValue;
-						tbody.innerHTML = "";
-						createtable(studentData);
-					}
-				};
+				if (id == "" || isNaN(id)) return;
+				studentData[id - 1][fieldType] = fieldValue;
+				tbody.innerHTML = "";
+				createtable(studentData);
 			}
 
 			function createtable(data) {

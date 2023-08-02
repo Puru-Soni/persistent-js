@@ -3,5 +3,5 @@ const res = new Promise((reslove, reject) => {
 		reslove("Foo");
 	}, 3000);
 });
-
+ 
 res.then((res) => console.log(res)).catch((e) => console.log(e));

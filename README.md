@@ -46,7 +46,7 @@ JavaScript fullstack course by persistent systems
     ->  operators
         control statements
 
-    ->  Aarrys and Objects(key-value pairs)
+    ->  list and Objects(key-value pairs)
 
 # DAY 2
 

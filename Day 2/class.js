@@ -2,10 +2,6 @@ class Student {
 	fname;
 	education;
 
-	fullname() {
-		return `${this.fname} ${this.lname}`;
-	}
-
 	constructor(fname, education) {
 		this.fname = fname;
 		this.education = education;
@@ -14,8 +10,12 @@ class Student {
 	getName() {
 		return this.fname;
 	}
+
+	fullname() {
+		return `${fname} ${lname}`;
+	}
 }
 
 console.dir(Student);
-console.dir(new Student());
+console.dir(new Student("puru", "b.tech"));
 console.log(new Student().fullname());

@@ -11,6 +11,7 @@ class B extends A {
 		console.log(this.size);
 	}
 }
+
 let b = new B();
 b.display();
 b.val = 5;
